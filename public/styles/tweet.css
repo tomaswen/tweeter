@@ -1,0 +1,57 @@
+.tweet {
+  position: relative;
+  top: 100px;
+  border: 2px solid#545149;
+}
+
+.tweet:hover {
+  box-shadow: 10px 10px #9b9a97;
+  text-shadow: -0.25px -0.25px 0 black, 0.25px 0.25px black;
+}
+
+.tweet:hover .tweet-handle {
+  visibility: visible;
+}
+
+article.tweet header {
+  margin: 2%;
+}
+
+.tweet-avatar {
+  width: 50px;
+  height: 50px;
+}
+
+.tweet-username {
+  position: absolute;
+  top: 25px;
+}
+
+.tweet-handle {
+  visibility: hidden;
+  position: absolute;
+  right: 10px;
+  top: 25px;
+  color: #9b9a97;
+}
+article.tweet p {
+  margin-left: 4%;
+  margin-right: 4%;
+}
+article.tweet footer {
+  font-size: 15px;
+  margin: 2%;
+  border-top: 2px solid#545149;
+}
+
+.days-ago {
+  position: relative;
+  left: 3%;
+  top: 5px;
+}
+
+.tweet-icons {
+  position: relative;
+  left: 85%;
+  top: 5px;
+}
