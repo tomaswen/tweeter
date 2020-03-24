@@ -5,13 +5,39 @@
     <title>Tweeter - Home Page</title>
 
     <!-- External CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      type="text/css"
+    />
 
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
 
+    <!-- Nav CSS -->
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+
+    <!-- Header CSS -->
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+
+    <!-- New Tweet CSS -->
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+
+    <!--Tweets CSS-->
+    <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Bungee|Source+Sans+Pro:300,300i,700,700i&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script
+      type="text/javascript"
+      src="scripts/composer-char-counter.js"
+    ></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
@@ -20,10 +46,59 @@
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
-      <span>tweeter</span>
+      <span id="home">tweeter</span>
     </nav>
+    <!-- Header has both the avatar and the name -->
+    <header id="profile">
+      <div>
+        <img
+          alt="Profile Avatar"
+          id="avatar"
+          class="center"
+          src="/images/profile-hex.png"
+        />
+      </div>
+      <br />
+      <div>
+        <h2 id="name" class="center">Your Name</h2>
+      </div>
+    </header>
 
     <!-- Page-specific (main) content here -->
-    <main class="container"></main>
+
+    <!-- Main container where new tweets and tweets are going to be located-->
+    <main class="container">
+      <section class="new-tweet">
+        <form method="POST" action="/tweets/">
+          <label for="tweet-text">What are you humming about?</label>
+          <textarea name="text" id="tweet-text"></textarea>
+          <button type="submit">Tweet</button>
+          <output name="counter" class="counter" for="tweet-text">140</output>
+        </form>
+      </section>
+      <section id="tweet-container">
+        <article class="tweet">
+          <header>
+            <img
+              alt="Profile Avatar"
+              class="tweet-avatar"
+              src="/images/profile-hex.png"
+            />
+            <label class="tweet-username"> NAME </label>
+            <label class="tweet-handle">@HANDLE</label>
+          </header>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor
+            placeat quisquam sit eligendi ipsa possimus beatae temporibus vel.
+            Soluta omnis fugit cum voluptatum error nam autem alias, voluptas
+            nemo quidem?
+          </p>
+          <footer>
+            <label class="days-ago">days ago</label>
+            <label class="tweet-icons">⚐ ? ♡ </label>
+          </footer>
+        </article>
+      </section>
+    </main>
   </body>
 </html>
