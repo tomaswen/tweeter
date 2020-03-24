@@ -1,0 +1,35 @@
+.new-tweet {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+label[for="tweet-text"] {
+  position: absolute;
+  top: 10px;
+}
+#tweet-text {
+  position: relative;
+  top: 40px;
+  width: 100%;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid#545149;
+}
+
+.counter {
+  position: absolute;
+  top: 90px;
+  right: 0px;
+  font-family: "Bungee", sans-serif;
+}
+
+button[type="submit"] {
+  position: absolute;
+  top: 90px;
+  left: 0px;
+  font-family: "Bungee", sans-serif;
+  color: #ffffff;
+  background-color: #4056a1;
+}
