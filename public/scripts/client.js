@@ -63,6 +63,7 @@ $(() => {
     event.preventDefault();
     $tweetText = $("#tweet-text");
     $error = $("#error-message");
+    $error.slideUp("slow");
     if (!$tweetText.val()) {
       $error.text("❕❕❕ Your tweet is empty, please try again");
       $error.slideDown("slow");
@@ -76,7 +77,6 @@ $(() => {
       $.post("/tweets/", serializedTweet, () => {
         //WHEN A POST IS MADE IT WILL EMPTY THE TEXT BOX AND LOAD TWEETS AGAIN
         $("#tweet-text").val("");
-        $error.slideUp("slow");
         loadTweets();
       });
     }
