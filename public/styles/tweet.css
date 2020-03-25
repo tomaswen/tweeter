@@ -1,6 +1,8 @@
 .tweet {
   position: relative;
   top: 100px;
+  margin: 20px;
+  padding: auto;
   border: 2px solid#545149;
 }
 
@@ -39,6 +41,7 @@ article.tweet p {
   margin-right: 4%;
 }
 article.tweet footer {
+  position: relative;
   font-size: 15px;
   margin: 2%;
   border-top: 2px solid#545149;
@@ -46,12 +49,16 @@ article.tweet footer {
 
 .days-ago {
   position: relative;
-  left: 3%;
+  left: 5%;
   top: 5px;
 }
 
 .tweet-icons {
-  position: relative;
-  left: 85%;
+  position: absolute;
+  left: 90%;
   top: 5px;
+}
+
+.tweet-content {
+  overflow-wrap: break-word;
 }
