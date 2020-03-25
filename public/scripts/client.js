@@ -62,15 +62,21 @@ $(() => {
   $("form").submit(event => {
     event.preventDefault();
     $tweetText = $("#tweet-text");
+    $error = $("#error-message");
     if (!$tweetText.val()) {
-      alert("Empty tweet");
+      $error.text("❕❕❕ Your tweet is empty, please try again");
+      $error.slideDown("slow");
+      $error.css("display", "block");
     } else if ($tweetText.val().length > 140) {
-      alert("Message too long");
+      $error.text("❕❕❕ Your tweet exceeded the limit, please try again");
+      $error.slideDown("slow");
+      $error.css("display", "block");
     } else {
       const serializedTweet = $tweetText.serialize();
       $.post("/tweets/", serializedTweet, () => {
         //WHEN A POST IS MADE IT WILL EMPTY THE TEXT BOX AND LOAD TWEETS AGAIN
         $("#tweet-text").val("");
+        $error.slideUp("slow");
         loadTweets();
       });
     }

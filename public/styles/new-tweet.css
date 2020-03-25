@@ -5,8 +5,8 @@
 }
 
 label[for="tweet-text"] {
-  position: absolute;
-  top: 10px;
+  position: relative;
+  top: 20px;
 }
 #tweet-text {
   position: relative;
@@ -19,17 +19,27 @@ label[for="tweet-text"] {
 }
 
 .counter {
-  position: absolute;
-  top: 90px;
-  right: 0px;
+  position: relative;
+  top: 40px;
+  left: 83%;
   font-family: "Bungee", sans-serif;
 }
 
 button[type="submit"] {
-  position: absolute;
-  top: 90px;
+  position: relative;
+  top: 40px;
   left: 0px;
   font-family: "Bungee", sans-serif;
   color: #ffffff;
   background-color: #4056a1;
+}
+
+#error-message {
+  display: none;
+  width: 100%;
+  text-align: center;
+  border: 2px ridge red;
+  color: white;
+  background-color: rgb(221, 92, 92);
+  font-weight: bolder;
 }

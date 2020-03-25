@@ -68,7 +68,9 @@
 
     <!-- Main container where new tweets and tweets are going to be located-->
     <main class="container">
+      <!-- FORM WHERE USER CAN SUBMIT NEW TWEET-->
       <section class="new-tweet">
+        <div id="error-message"></div>
         <form method="POST" action="/tweets/">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
@@ -76,6 +78,7 @@
           <output name="counter" class="counter" for="tweet-text">140</output>
         </form>
       </section>
+      <!-- NEW TWEET WILL BE CONTAINED THIS SECTION-->
       <section id="tweets-container"></section>
     </main>
   </body>
