@@ -1,16 +1,30 @@
 nav {
-   position: fixed;
-   top: 0px;
-   right: 0px;
-   left: 0px;
-   height: 120px;
-   width: 100vw;
-   z-index: 1000;
-   background-color: #4056A1;
-   color: #FFFFFF ;
-   padding: 1.5em
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  height: 120px;
+  width: 100vw;
+  z-index: 1000;
+  background-color: #4056a1;
+  color: #ffffff;
+  padding: 1.5em;
 }
 
 span#home {
-   font-family: "Bungee",sans-serif;
+  position: relative;
+  font-family: "Bungee", sans-serif;
+}
+button[type="button"] {
+  position: absolute;
+  padding-right: inherit;
+  font-family: "Source Sans Pro", sans-serif;
+  background-color: inherit;
+  border: none;
+  color: #ffffff;
+  right: 0%;
+}
+
+button[type="button"]:hover {
+  cursor: pointer;
 }

@@ -81,4 +81,10 @@ $(() => {
       });
     }
   });
+
+  $button = $("nav").children("button");
+  $button.click(() => {
+    $(".new-tweet").slideToggle("slow");
+    $("#tweet-text").focus();
+  });
 });
