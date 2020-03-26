@@ -20,6 +20,7 @@ const daysSinceFunction = date => {
   return daysSince;
 };
 
+//Creates a markup for a single element
 const createTweetElement = tweetObject => {
   const daysSince = daysSinceFunction(tweetObject["created_at"]);
   const markup = `
@@ -44,7 +45,7 @@ const createTweetElement = tweetObject => {
   return markup;
 };
 
-//render the markup created through createTweetElement
+//render the markup array of each element markup created through createTweetElement
 const renderTweets = tweets => {
   const markupArr = [];
 
@@ -58,12 +59,16 @@ const renderTweets = tweets => {
 
 //Ready the document
 $(() => {
+  // LOAD TWEET FUNCTION
   const loadTweets = () => {
     $.get("/tweets", data => {
       renderTweets(data);
     });
   };
-  loadTweets(); //<----- load tweets at the beginning
+
+  loadTweets(); //<----- load tweets at the beginniNG
+
+  //AJAX POST ON FORM SUBMIT AND ERROR HANDLING
   $("form").submit(event => {
     event.preventDefault();
     $tweetText = $("#tweet-text");
@@ -87,7 +92,7 @@ $(() => {
       });
     }
   });
-
+  // NAVIGATION BAR'S COMPOSE TWEET BUTTON EVENT LISTENER
   $button = $("nav").children("button");
   $button.click(() => {
     $(".new-tweet").slideToggle("slow");
