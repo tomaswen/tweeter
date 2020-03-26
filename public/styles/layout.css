@@ -34,3 +34,26 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+/*FOR DESKTOP SCREEN */
+@media only screen and (min-width: 1024px) {
+  body {
+    display: flex;
+  }
+  header#profile {
+    position: fixed;
+    width: 33.3%;
+    float: left;
+    top: 50%;
+    margin-top: -200px;
+  }
+  .container {
+    position: absolute;
+    width: 66.6%;
+    float: right;
+    right: 0;
+    top: 120px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}

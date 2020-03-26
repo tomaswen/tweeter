@@ -48,14 +48,12 @@ article.tweet footer {
 
 .days-ago {
   position: relative;
-  left: 5%;
-  top: 5px;
+  left: 0px;
 }
 
 .tweet-icons {
   position: absolute;
-  left: 90%;
-  top: 5px;
+  right: 0px;
 }
 
 .tweet-content {
