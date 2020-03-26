@@ -30,7 +30,7 @@
     <!--Tweets CSS-->
     <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
 
-    <!-- Fonts -->
+    <!-- Fonts for Bungee and Source Sans Pro -->
     <link
       href="https://fonts.googleapis.com/css?family=Bungee|Source+Sans+Pro:300,300i,700,700i&display=swap"
       rel="stylesheet"
@@ -67,7 +67,7 @@
       </div>
       <br />
       <div>
-        <h2 id="name" class="center">NAME</h2>
+        <h2 id="name" class="center"><bold>TOMAS</bold> WEN</h2>
       </div>
     </header>
 
@@ -75,7 +75,7 @@
 
     <!-- Main container where new tweets and tweets are going to be located-->
     <main class="container">
-      <!-- FORM WHERE USER CAN SUBMIT NEW TWEET-->
+      <!-- SECTION THAT CONTAINS FORM WHERE USER CAN SUBMIT NEW TWEET-->
       <section class="new-tweet">
         <div id="error-message"></div>
         <form method="POST" action="/tweets/">
@@ -85,6 +85,7 @@
           <output name="counter" class="counter" for="tweet-text">140</output>
         </form>
       </section>
+
       <!-- NEW TWEET WILL BE CONTAINED THIS SECTION-->
       <section id="tweets-container"></section>
     </main>

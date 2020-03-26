@@ -10,13 +10,18 @@ const escape = str => {
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 };
-
-const createTweetElement = tweetObject => {
-  const tweetedDate = new Date(tweetObject["created_at"]);
+// Returns the number of days from a specific date to today
+const daysSinceFunction = date => {
+  const tweetedDate = new Date(date);
   const todayDate = new Date();
   const daysSince = Math.round(
     (todayDate.getTime() - tweetedDate.getTime()) / 86400000
   );
+  return daysSince;
+};
+
+const createTweetElement = tweetObject => {
+  const daysSince = daysSinceFunction(tweetObject["created_at"]);
   const markup = `
     <article class="tweet">
       <header>
@@ -63,7 +68,7 @@ $(() => {
     event.preventDefault();
     $tweetText = $("#tweet-text");
     $error = $("#error-message");
-    $error.slideUp("slow");
+    $error.slideUp("fast");
     if (!$tweetText.val()) {
       $error.text("❕❕❕ Your tweet is empty, please try again");
       $error.slideDown("slow");

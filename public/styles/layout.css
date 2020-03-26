@@ -35,7 +35,7 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
-/*FOR DESKTOP SCREEN */
+/*MEDIA FOR DESKTOP SCREEN */
 @media only screen and (min-width: 1024px) {
   body {
     display: flex;
