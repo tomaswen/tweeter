@@ -31,7 +31,7 @@ const createTweetElement = tweetObject => {
       <p class = "tweet-content"> ${escape(tweetObject.content.text)}</p>
       <footer>
         <label class="days-ago">${daysSince} days ago</label>
-        <label class="tweet-icons">⚐ ? ♡ </label>
+        <label class="tweet-icons">🏳️ 🔁 🤍</label>
       </footer>
     </article>
   `;
@@ -75,8 +75,9 @@ $(() => {
     } else {
       const serializedTweet = $tweetText.serialize();
       $.post("/tweets/", serializedTweet, () => {
-        //WHEN A POST IS MADE IT WILL EMPTY THE TEXT BOX AND LOAD TWEETS AGAIN
+        //WHEN A POST IS MADE IT WILL EMPTY THE TEXT BOX, RESET COUNTER AND LOAD TWEETS AGAIN
         $("#tweet-text").val("");
+        $(".counter").html("140");
         loadTweets();
       });
     }
