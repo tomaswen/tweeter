@@ -23,6 +23,7 @@ const daysSinceFunction = date => {
 //Creates a markup for a single element
 const createTweetElement = tweetObject => {
   const daysSince = daysSinceFunction(tweetObject["created_at"]);
+  const date = new Date(tweetObject["created_at"]).toISOString();
   const markup = `
     <article class="tweet">
       <header>
@@ -36,7 +37,7 @@ const createTweetElement = tweetObject => {
       </header>
       <p class = "tweet-content"> ${escape(tweetObject.content.text)}</p>
       <footer>
-        <label class="days-ago">${daysSince} days ago</label>
+        <time class="days-ago" datetime ="${date}">${date}</time>
         <label class="tweet-icons">🏳️ 🔁 🤍</label>
       </footer>
     </article>
@@ -55,6 +56,7 @@ const renderTweets = tweets => {
   }
   markupArr.reverse();
   $("#tweets-container").html(markupArr.join(" "));
+  $("time.days-ago").timeago();
 };
 
 //Ready the document
@@ -85,10 +87,11 @@ $(() => {
     } else {
       const serializedTweet = $tweetText.serialize();
       $.post("/tweets/", serializedTweet, () => {
-        //WHEN A POST IS MADE IT WILL EMPTY THE TEXT BOX, RESET COUNTER AND LOAD TWEETS AGAIN
+        //WHEN A POST IS MADE IT WILL EMPTY THE TEXT BOX, RESET COUNTER, LOAD TWEETS AGAIN, AND UPDATES THE TIMESTAMPS
         $("#tweet-text").val("");
         $(".counter").html("140");
         loadTweets();
+        $("time.days-ago").timeago("update", new Date());
       });
     }
   });
