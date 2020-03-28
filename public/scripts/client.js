@@ -10,19 +10,9 @@ const escape = str => {
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 };
-// Returns the number of days from a specific date to today
-const daysSinceFunction = date => {
-  const tweetedDate = new Date(date);
-  const todayDate = new Date();
-  const daysSince = Math.round(
-    (todayDate.getTime() - tweetedDate.getTime()) / 86400000
-  );
-  return daysSince;
-};
 
 //Creates a markup for a single element
 const createTweetElement = tweetObject => {
-  const daysSince = daysSinceFunction(tweetObject["created_at"]);
   const date = new Date(tweetObject["created_at"]).toISOString();
   const markup = `
     <article class="tweet">
@@ -56,7 +46,7 @@ const renderTweets = tweets => {
   }
   markupArr.reverse();
   $("#tweets-container").html(markupArr.join(" "));
-  $("time.days-ago").timeago();
+  $("time.days-ago").timeago(); //<--- CHANGES THE TIME STAMPS USING TIMEAGO()
 };
 
 //Ready the document
@@ -91,7 +81,7 @@ $(() => {
         $("#tweet-text").val("");
         $(".counter").html("140");
         loadTweets();
-        $("time.days-ago").timeago("update", new Date());
+        $("time.days-ago").timeago("update", new Date()); //<---- UPDATES THE POSTS TIME STAMP WHENEVER A POST IS SUBMITTED
       });
     }
   });
